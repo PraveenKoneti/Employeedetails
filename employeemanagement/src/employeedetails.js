@@ -318,14 +318,14 @@ const Employeedetails = () =>
                                             <div className="row">
                                                 <div className="col-sm-5">
                                                     <div class="form-check">
-                                                        <input type="radio" class="form-check-input" onChange={obj=>pickgender(obj.target.value)} value="male" name="gender" />
+                                                        <input type="radio" class="form-check-input" onChange={obj=>pickgender(obj.target.value)} value="male" name="gender" checked={gender==="male"} />
                                                             Male 
                                                     </div>
                                                 </div>
                                                         
                                                 <div className="col-sm-6">
                                                     <div class="form-check">
-                                                        <input type="radio" class="form-check-input" onChange={obj=>pickgender(obj.target.value)} value="female" name="gender" /> 
+                                                        <input type="radio" class="form-check-input" onChange={obj=>pickgender(obj.target.value)} value="female" name="gender" checked={gender==="female"}   /> 
                                                         Female 
                                                     </div>
                                                 </div>  
@@ -336,19 +336,19 @@ const Employeedetails = () =>
                                             <div className="row">
                                                 <div className="col-sm-4">
                                                     <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="MCA" /> 
+                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="MCA" checked={course==="MCA"} /> 
                                                         MCA 
                                                     </div>
                                                 </div> 
                                                 <div className="col-sm-4"> 
                                                     <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="BCA" /> 
+                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="BCA" checked={course==="BCA"} /> 
                                                         BCA 
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-4">
                                                     <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="BSC" /> 
+                                                        <input type="checkbox" class="form-check-input" name="employeecourse" onChange={obj=>pickcourse(obj.target.value)} value="BSC" checked={course==="BSC"} /> 
                                                         BSC 
                                                     </div>
                                                 </div> 
