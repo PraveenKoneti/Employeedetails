@@ -1,0 +1,7 @@
+					                        EMPLOYEE DETAILS 
+			
+					- The Admin must and should be login then only it will show the EMPLOYEE DETAILS.
+				        - The Admin should enter the username and password mandatory.
+
+					- Username  :  praveen
+					- password  :  praveen123
