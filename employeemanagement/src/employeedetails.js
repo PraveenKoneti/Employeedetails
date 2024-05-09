@@ -18,6 +18,7 @@ const Employeedetails = () =>
     let[button, pickbutton] = useState("Save");
     let[searchkey, picksearchkey] = useState("");
     let[employeeid, pickemployeeid] = useState("");
+    let[photo, pickphoto]=useState("");
 
     let[emailerror, pickemailerror] = useState("");
 
@@ -67,7 +68,7 @@ const Employeedetails = () =>
         if(course == "")
             c = 1;
 
-        if(image == null)
+        if(image === null)
             c = 1;
 
         if(c === 0)
@@ -93,6 +94,7 @@ const Employeedetails = () =>
                 formData.append('gender', gender);
                 formData.append('course', course);
                 formData.append('date', date);
+                pickimage(image===null?photo:image)
                 formData.append('employeeimage', image); // Append the actual file object
             
                 // Make POST request using axios
@@ -153,6 +155,7 @@ const Employeedetails = () =>
         const file = e.target.files[0];
         console.log(file);
         pickimage(file);
+        alert(file);
     };
 
 
@@ -174,7 +177,6 @@ const Employeedetails = () =>
            pickdesignation(res.designation);
            pickcourse(res.course);
            pickgender(res.gender);
-           pickimage(res.image);
            pickbutton("Update");
            pickemployeeid(res._id);
         })
@@ -356,7 +358,10 @@ const Employeedetails = () =>
                                         </div>
                                         <div className="row mb-4">
                                             <h6> Image upload </h6>
-                                            <input type="file" accept=".png, .jpg, .jpeg" className="form-control" onChange={handleFileChange} />
+                                            <input type="file" accept=".png, .jpg, .jpeg" className="form-control" onChange={handleFileChange}  />
+                                            {
+                                                (image === null) ? (<i className="text-danger"> Upload the image  </i>):''
+                                            }
                                         </div>
                                         <div className="mt-3">
                                             <button type="submit" className="btn btn-primary form-control" data-bs-dismiss="modal"> {button} </button>
